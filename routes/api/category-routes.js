@@ -6,7 +6,6 @@ const { Category, Product } = require('../../models');
 router.get('/', (req, res) => {
   // find all categories
   // be sure to include its associated Products
-  //check db name here
   Category.findAll({
     include: [
       {
@@ -56,6 +55,7 @@ router.post('/', (req, res) => {
       console.log(err);
       res.status(500).json(err);
     });
+    console.log(req.body); 
 });
 
 router.put('/:id', (req, res) => {
